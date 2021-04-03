@@ -109,5 +109,3 @@ inputbox.addEventListener("keyup", function () {
     items.insertAdjacentHTML("afterbegin", addItem(item));
   });
 });
-console.log("bug");
-console.log("new");
