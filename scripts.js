@@ -110,3 +110,4 @@ inputbox.addEventListener("keyup", function () {
   });
 });
 console.log("bug");
+console.log("new");
