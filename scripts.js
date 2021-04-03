@@ -4,6 +4,10 @@ const btnPizza = document.querySelector(".pizza");
 const btnPasta = document.querySelector(".pasta");
 const btnChicken = document.querySelector(".chicken");
 const inputbox = document.querySelector(".search-box");
+const item = document.getElementsByClassName("item");
+const modal = document.querySelector(".modal");
+const modelContent = document.querySelector(".modal-content");
+const btnClose = document.querySelector(".close");
 const all = [
   {
     id: "chicken",
@@ -114,4 +118,24 @@ inputbox.addEventListener("keyup", function () {
   filterFood.forEach((item) => {
     items.insertAdjacentHTML("afterbegin", addItem(item));
   });
+});
+
+const itemsArr = [...item];
+itemsArr.forEach((item) => {
+  item.addEventListener("click", function () {
+    modal.style.display = "block";
+    const imgurl = this.querySelector("img").src;
+    const imgUrl = imgurl.slice(21);
+    modelContent.style.background = `url(${imgUrl})`;
+    modelContent.style.backgroundRepeat = "no-repeat";
+    modelContent.style.backgroundSize = "cover";
+  });
+});
+btnClose.addEventListener("click", function () {
+  modal.style.display = "none";
+});
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
 });
