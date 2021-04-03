@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: lightgray;
+}
+header {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 80px;
+  color: rgb(248, 159, 174);
+}
+nav {
+  text-align: center;
+}
+nav input {
+  padding: 8px;
+  font-size: 15px;
+  margin-left: 20px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+nav input:hover {
+  background-color: black;
+  color: pink;
+  cursor: pointer;
+}
+.search {
+  text-align: center;
+  padding-top: 20px;
+}
+.search input {
+  padding: 10px 10px;
+  width: 30%;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+.fa-search {
+  vertical-align: middle;
+  border: 1px solid black;
+  padding: 8px 8px;
+  background-color: pink;
+  border-radius: 4px;
+}
+.card-img {
+  width: 250px;
+  height: 150px;
+}
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 820px;
+  margin: auto;
+  margin-bottom: 200px;
+}
+.card-info {
+  position: absolute;
+  top: 150px;
+  width: 228px;
+  border: 1px solid gray;
+  border-top: 0;
+  padding: 10px;
+}
+.item {
+  position: relative;
+  margin: 30px 10px;
+}
