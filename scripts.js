@@ -7,7 +7,7 @@ const inputbox = document.querySelector(".search-box");
 const all = [
   {
     id: "chicken",
-    ten: "chicken-1",
+    ten: "chicken-3",
     price: 25 + "$",
     img: "pic/chicken/download.jpeg",
   },
@@ -105,6 +105,12 @@ inputbox.addEventListener("keyup", function () {
   items.textContent = "";
   let input = this.value.toLowerCase();
   const filterFood = all.filter((type) => type.id.startsWith(input));
+  if (filterFood.length === 0) {
+    items.insertAdjacentHTML(
+      "afterbegin",
+      `<h2 style="margin:auto;padding-top:100px">we don't have that , try again with something else</h2>`
+    );
+  }
   filterFood.forEach((item) => {
     items.insertAdjacentHTML("afterbegin", addItem(item));
   });
