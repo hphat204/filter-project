@@ -4,7 +4,7 @@ const btnPizza = document.querySelector(".pizza");
 const btnPasta = document.querySelector(".pasta");
 const btnChicken = document.querySelector(".chicken");
 const inputbox = document.querySelector(".search-box");
-const item = document.getElementsByClassName("item");
+const itemArr = document.getElementsByClassName("item");
 const modal = document.querySelector(".modal");
 const modelContent = document.querySelector(".modal-content");
 const btnClose = document.querySelector(".close");
@@ -77,11 +77,13 @@ function addItem(item) {
 }
 all.forEach((item) => {
   items.insertAdjacentHTML("afterbegin", addItem(item));
+  modalItems();
 });
 btnAll.addEventListener("click", function () {
   items.textContent = "";
   all.forEach((item) => {
     items.insertAdjacentHTML("afterbegin", addItem(item));
+    modalItems();
   });
 });
 btnChicken.addEventListener("click", function () {
@@ -89,6 +91,7 @@ btnChicken.addEventListener("click", function () {
   const chickenfilter = all.filter((chick) => chick.id === "chicken");
   chickenfilter.forEach((item) => {
     items.insertAdjacentHTML("afterbegin", addItem(item));
+    modalItems();
   });
 });
 btnPasta.addEventListener("click", function () {
@@ -96,6 +99,7 @@ btnPasta.addEventListener("click", function () {
   const pastafilter = all.filter((pas) => pas.id === "pasta");
   pastafilter.forEach((item) => {
     items.insertAdjacentHTML("afterbegin", addItem(item));
+    modalItems();
   });
 });
 btnPizza.addEventListener("click", function () {
@@ -103,6 +107,7 @@ btnPizza.addEventListener("click", function () {
   const pizzafilter = all.filter((pi) => pi.id === "pizza");
   pizzafilter.forEach((item) => {
     items.insertAdjacentHTML("afterbegin", addItem(item));
+    modalItems();
   });
 });
 inputbox.addEventListener("keyup", function () {
@@ -114,23 +119,27 @@ inputbox.addEventListener("keyup", function () {
       "afterbegin",
       `<h2 style="margin:auto;padding-top:100px">we don't have that , try again with something else</h2>`
     );
+  } else {
+    filterFood.forEach((item) => {
+      items.insertAdjacentHTML("afterbegin", addItem(item));
+      modalItems();
+    });
   }
-  filterFood.forEach((item) => {
-    items.insertAdjacentHTML("afterbegin", addItem(item));
-  });
 });
-
-const itemsArr = [...item];
-itemsArr.forEach((item) => {
-  item.addEventListener("click", function () {
-    modal.style.display = "block";
-    const imgurl = this.querySelector("img").src;
-    const imgUrl = imgurl.slice(21);
-    modelContent.style.background = `url(${imgUrl})`;
-    modelContent.style.backgroundRepeat = "no-repeat";
-    modelContent.style.backgroundSize = "cover";
+function modalItems() {
+  let itemsArr = [...itemArr];
+  itemsArr.forEach((item) => {
+    item.addEventListener("click", function () {
+      modal.style.display = "block";
+      const imgurl = this.querySelector("img").src;
+      const imgUrl = imgurl.slice(21);
+      modelContent.style.background = `url(${imgUrl})`;
+      modelContent.style.backgroundRepeat = "no-repeat";
+      modelContent.style.backgroundSize = "cover";
+    });
   });
-});
+}
+modalItems();
 btnClose.addEventListener("click", function () {
   modal.style.display = "none";
 });
