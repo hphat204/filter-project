@@ -11,10 +11,20 @@
     <div class="container">
       <header>Our store</header>
       <nav>
-        <input type="submit" class="all" value="ALL" />
-        <input type="submit" class="pizza" value="PIZZA" />
-        <input type="submit" class="pasta" value="PASTA" />
-        <input type="submit" class="chicken" value="CHICKEN" />
+        <input type="button" class="all" value="ALL" />
+        <input type="button" class="pizza" value="PIZZA" />
+        <input type="button" class="pasta" value="PASTA" />
+        <input type="button" class="chicken" value="CHICKEN" />
+        <span class="checkout">
+          <i class="fas fa-shopping-cart"></i>
+          <input type="button" class="cart" value="CART" />
+        </span>
+        <div class="cart-item nodisplay"></div>
+        <div class="total-price nodisplay">
+          <p class="total">total:</p>
+          <input type="button" class="clear" value="Clear Cart" />
+          <input type="button" class="checkout" value="Checkout" />
+        </div>
       </nav>
       <div class="search">
         <i class="fas fa-search"></i>

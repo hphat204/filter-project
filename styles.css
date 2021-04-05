@@ -7,9 +7,12 @@ header {
   text-align: center;
   padding-top: 50px;
   font-size: 80px;
-  color: rgb(248, 159, 174);
+  color: rgb(199, 49, 74);
 }
 nav {
+  position: relative;
+  width: 50%;
+  margin: auto;
   text-align: center;
 }
 nav input {
@@ -21,7 +24,8 @@ nav input {
 }
 nav input:hover {
   background-color: black;
-  color: pink;
+  color: yellow;
+  font-style: italic;
   cursor: pointer;
 }
 .search {
@@ -39,7 +43,7 @@ nav input:hover {
   vertical-align: middle;
   border: 1px solid black;
   padding: 8px 8px;
-  background-color: pink;
+  background-color: rgb(235, 222, 108);
   border-radius: 4px;
 }
 .card-img {
@@ -133,4 +137,94 @@ nav input:hover {
 .close:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+.checkout {
+  position: absolute;
+  right: 0;
+}
+.checkout input {
+  width: 80px;
+  text-align: right;
+}
+.checkout i {
+  position: absolute;
+  top: 13px;
+  right: 60px;
+}
+.checkout:hover i {
+  top: 15px;
+  right: 90px;
+}
+.checkout:hover input {
+  text-align: center;
+}
+.fa-plus-square {
+  position: absolute;
+  top: 130px;
+  right: 0px;
+  font-size: 21px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background-color: lightsalmon;
+}
+.fa-plus-square:hover {
+  transform: scale(1.4);
+  top: 127px;
+  right: 3px;
+  cursor: pointer;
+}
+.cart-item {
+  position: absolute;
+  background-color: white;
+  overflow: auto;
+  width: 200px;
+  height: 300px;
+  top: 0;
+  right: -240px;
+  background: rgba(255, 255, 255, 0.555);
+  transition: opacity 0.2s linear;
+  border-radius: 10px;
+}
+.item-list {
+  margin-top: 10px;
+
+  display: flex;
+  background-color: white;
+}
+
+.item-name,
+.item-price {
+  background-color: white;
+  margin: auto;
+}
+.item-price {
+  padding-right: 40px;
+}
+.item-list img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.nodisplay {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.total-price {
+  position: absolute;
+  top: 300px;
+  right: -240px;
+  width: 200px;
+  z-index: 1;
+}
+.total {
+  margin: 7px 0;
+}
+.clear {
+  padding: 5px;
+  margin-left: -100px;
+}
+.checkout {
+  padding: 5px;
+  margin-right: 25px;
 }
